@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scn/client/client.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="Node" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_right = -32.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 92.0
+margin_right = 960.0
+margin_bottom = 126.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/normal = SubResource( 2 )
+align = 1
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_left = 448.0
+margin_top = 146.0
+margin_right = 512.0
+margin_bottom = 166.0
+size_flags_horizontal = 6
+text = "Connect"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 186.0
+margin_right = 960.0
+margin_bottom = 206.0
+custom_constants/separation = 20
+
+[node name="Email" type="LineEdit" parent="VBoxContainer"]
+margin_top = 226.0
+margin_right = 960.0
+margin_bottom = 250.0
+
+[node name="Password" type="LineEdit" parent="VBoxContainer"]
+margin_top = 270.0
+margin_right = 960.0
+margin_bottom = 294.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 314.0
+margin_right = 960.0
+margin_bottom = 334.0
+text = "Get Token"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 354.0
+margin_right = 960.0
+margin_bottom = 374.0
+custom_constants/separation = 20
+
+[node name="Token" type="LineEdit" parent="VBoxContainer"]
+margin_top = 394.0
+margin_right = 960.0
+margin_bottom = 418.0
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 438.0
+margin_right = 960.0
+margin_bottom = 458.0
+text = "Verify Token"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 478.0
+margin_right = 960.0
+margin_bottom = 508.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/shadow_as_outline = 19
+custom_styles/normal = SubResource( 1 )
+text = "..."
+align = 1
+
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
